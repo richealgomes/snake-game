@@ -1,7 +1,7 @@
 // Game Constants & Variables
 let inputDir = {x: 0, y: 0}; 
 const foodSound = new Audio('music/food.mp3');
-const gameOverSound = new Audio('music/gameover.mp3');
+const gameOverSound = new Audio('music/gameOver.mp3');
 const moveSound = new Audio('music/move.mp3');
 const musicSound = new Audio('music/music.mp3');
 let speed = 10;
@@ -57,8 +57,8 @@ function gameEngine(){
         score += 1;
         if(score>hiscoreval){
             hiscoreval = score;
-            localStorage.setItem("hiscore", JSON.stringify(hiscoreval));
-            hiscoreBox.innerHTML = "HiScore: " + hiscoreval;
+            localStorage.setItem("highScore", JSON.stringify(hiscoreval));
+            hiscoreBox.innerHTML = "HighScore: " + hiscoreval;
         }
         scoreBox.innerHTML = "Score: " + score;
         snakeArr.unshift({x: snakeArr[0].x + inputDir.x, y: snakeArr[0].y + inputDir.y});
